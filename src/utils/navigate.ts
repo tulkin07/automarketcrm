@@ -1,0 +1,52 @@
+import { lazy } from "react";
+import { LayoutDashboard, Users, Package, Tags, Car } from "lucide-react";
+
+export const authRoutes = [
+    {
+        path: "/login",
+        component: lazy(() => import("../features/auth/pages/Login"))
+    }
+]
+
+export const privateRoutes = [
+    {
+        path: "/",
+        title: "Dashboard",
+        icon: LayoutDashboard,
+        component: lazy(() => import("../features/dashboard/pages/DashboardPage")),
+        roles: ["admin"]
+
+    },
+    {
+        path: "/users",
+        title: "Users",
+        icon:Users,
+        component: lazy(() => import("../features/users/pages/UsersPage")),
+        roles: ["admin", "hr"]
+
+    },
+    {
+        path: "/products",
+        title: "Products",
+        icon:Package,
+        component: lazy(() => import("../features/products/pages/ProductsPage")),
+        roles: ["admin", "hr"]
+
+    },
+    {
+        path: "/brands",
+        title: "Brands",
+        icon:Tags,
+        component: lazy(() => import("../features/brands/pages/BrandsPage")),
+        roles: ["admin", "hr"]
+
+    },
+    {
+        path: "/models",
+        title: "Models",
+        icon:Car,
+        component: lazy(() => import("../features/models/pages/ModelsPage")),
+        roles: ["admin", "hr"]
+
+    }
+]

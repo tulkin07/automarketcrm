@@ -1,5 +1,27 @@
 @import "tailwindcss";
-.active{
-    color: black;
-    font-weight: bold;
+
+
+@theme {
+    --text-white: white;
+    --text-base: #1a1a1a;
+    --text-primary: #3db8f5;
+    --text-bg: #F5F5F5;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.dark {
+    --text-white: #2B2B2B;
+    --text-base: #efefef;
+    --text-primary: #1E88E5;
+    --text-bg: #1D1D1D;
+}
+
+.active {
+    background: var(--text-primary);
+    color: white;
 }
